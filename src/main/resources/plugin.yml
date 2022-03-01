@@ -1,0 +1,16 @@
+name: Pikacore
+version: '${project.version}'
+main: me.dangkhanh.pikacore.Pikacore
+api-version: 1.18
+authors: [ DangKhanh ]
+description: Core plugin of pikamc.net
+commands:
+  feed:
+    description: Feed a player
+    command: /<command>
+  heal:
+    description: Heal a player
+    command: /<command>
+  setslot:
+    description: Set damageable slot.
+    command: /<command>
