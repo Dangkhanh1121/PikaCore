@@ -18,6 +18,9 @@ public final class Pikacore extends JavaPlugin {
         getCommand("feed").setExecutor(new FeedCommand());
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("setslot").setExecutor(new SetSlotCommand());
+
+        getConfig().options().copyDefaults();
+        saveDefaultConfig();
     }
 
     @Override
