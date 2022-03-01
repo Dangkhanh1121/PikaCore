@@ -13,8 +13,9 @@ public class SetSlotCommand implements CommandExecutor {
         if(sender instanceof Player){
             Player p = (Player) sender;
            if(args.length > 0){
-               plugin.getConfig().set("slot", args[0]);
-               p.sendMessage("Successfully set new damagable slot to " + args[0]);
+               plugin.getConfig().set("slot",Integer.parseInt(args[0]));
+               plugin.saveConfig();
+               p.sendMessage("Successfully set new damageable slot to " + args[0]);
            }else{
                p.sendMessage("You must specify an arg.");
            }
