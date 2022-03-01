@@ -12,6 +12,7 @@ public final class Pikacore extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
+        instance = this;
         getServer().getPluginManager().registerEvents(new PlayerMoveEvent(), this);
         getServer().getPluginManager().registerEvents(new HotbarDamageSlot(), this);
         getCommand("feed").setExecutor(new FeedCommand());
