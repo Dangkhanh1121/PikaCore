@@ -20,12 +20,10 @@ public class CustomModelDataCommand implements CommandExecutor {
                 itemMeta.setCustomModelData(Integer.parseInt(args[0]));
                 item.setItemMeta(itemMeta);
                 p.sendMessage("Set Custom Model to " + args[0]);
+                p.getEquipment().setItemInMainHand(item);
             }
         }
-
-
-
-
         return true;
+
     }
 }
