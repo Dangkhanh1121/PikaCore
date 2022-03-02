@@ -14,3 +14,6 @@ commands:
   setslot:
     description: Set damageable slot.
     command: /<command>
+  setcustommodeldata:
+    description: Set custom model data to item in hand
+    command: /<command>

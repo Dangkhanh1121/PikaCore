@@ -1,5 +1,6 @@
 package me.dangkhanh.pikacore;
 
+import me.dangkhanh.pikacore.commands.CustomModelDataCommand;
 import me.dangkhanh.pikacore.commands.FeedCommand;
 import me.dangkhanh.pikacore.commands.HealCommand;
 import me.dangkhanh.pikacore.commands.SetSlotCommand;
@@ -18,6 +19,7 @@ public final class Pikacore extends JavaPlugin {
         getCommand("feed").setExecutor(new FeedCommand());
         getCommand("heal").setExecutor(new HealCommand());
         getCommand("setslot").setExecutor(new SetSlotCommand());
+        getCommand("setcustommodeldata").setExecutor(new CustomModelDataCommand());
 
         getConfig().options().copyDefaults();
         saveDefaultConfig();
