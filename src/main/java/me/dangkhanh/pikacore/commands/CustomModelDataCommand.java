@@ -19,7 +19,7 @@ public class CustomModelDataCommand implements CommandExecutor {
                 Player p = (Player) sender;
                 ItemStack item = new ItemStack(p.getEquipment().getItemInMainHand());
                 ItemMeta itemMeta = item.getItemMeta();
-                itemMeta.setDisplayName(args[0]);
+                itemMeta.setCustomModelData(args[0]);
                 item.setItemMeta(itemMeta);
                 p.sendMessage("Set Custom Model to " + args[0]);
             }
