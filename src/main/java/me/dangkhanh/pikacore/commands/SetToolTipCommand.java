@@ -6,6 +6,7 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
@@ -13,7 +14,9 @@ import org.bukkit.inventory.meta.ItemMeta;
 import java.util.ArrayList;
 
 public class SetToolTipCommand implements CommandExecutor {
+
     private Pikacore plugin = Pikacore.getInstance();
+
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
@@ -26,11 +29,14 @@ public class SetToolTipCommand implements CommandExecutor {
             if(args.length == 4) {
 
                 itemMeta.addItemFlags(ItemFlag.HIDE_ATTRIBUTES);
-                itemMeta.setDisplayName(args[0]);
+                itemMeta.setDisplayName(plugin.getConfig().getString("offset") + ChatColor.WHITE + args[0] + plugin.getConfig().getString("offset"));
                 ArrayList<String> lore = new ArrayList<>();
-                lore.add(plugin.getConfig().getString("offset") + ChatColor.WHITE + args[1]);
-                lore.add(plugin.getConfig().getString("offset") + ChatColor.WHITE + args[2]);
-                lore.add(plugin.getConfig().getString("offset") + ChatColor.WHITE + args[3]);
+
+                lore.add(plugin.getConfig().getString("offset") + ChatColor.WHITE + args[1] + plugin.getConfig().getString("offset"));
+                for(int i=1;i<=plugin.getConfig().getInt("middle");i++){
+                    lore.add(plugin.getConfig().getString("offset") + ChatColor.WHITE + args[2] + plugin.getConfig().getString("offset"));
+                }
+                lore.add(plugin.getConfig().getString("offset") + ChatColor.WHITE + args[3] + plugin.getConfig().getString("offset"));
                 itemMeta.setLore(lore);
                 item.setItemMeta(itemMeta);
 

@@ -17,3 +17,6 @@ commands:
   setcustommodeldata:
     description: Set custom model data to item in hand
     command: /<command>
+  settooltip:
+    description: Set custom tooltip for your item
+    command: /<command>
